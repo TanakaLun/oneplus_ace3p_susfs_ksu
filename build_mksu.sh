@@ -45,8 +45,8 @@ patch -p1 --forward < vfs_fix.patch || true
 # patch -p1 < KernelSU-Next-Implement-SUSFS-v${SUSFS_VERSION}-Universal.patch || true
 cd ../common
 patch -p1 < 50_add_susfs_in_gki-${ANDROID_VERSION}-${KERNEL_VERSION}.patch || true
-# patch -p1 < 001-lz4.patch || true
-# patch -p1 < 002-zstd.patch || true
+patch -p1 < 001-lz4.patch || true
+patch -p1 < 002-zstd.patch || true
 # 启用第48至第49行命令来使用lz4与zstd补丁以更新压缩算法，实现更高效的内存压制与一定程度的省电。来自 https://github.com/ferstar/kernel_manifest/blob/realme/sm8650/patches
 cp ../../kernel_patches/69_hide_stuff.patch ./
 patch -p1 -F 3 < 69_hide_stuff.patch
